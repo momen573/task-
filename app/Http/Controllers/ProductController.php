@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
 
 class ProductController extends Controller
 {
@@ -37,7 +36,7 @@ class ProductController extends Controller
 
 
 
-        return response()->json(['data'=>$newRecords , 'page'=>$products->paginate(10) ]);
+        return response()->json(['data'=>$newRecords , 'page'=>$products->paginate($perPage) ]);
     }
 
 }
