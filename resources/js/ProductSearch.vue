@@ -53,6 +53,7 @@ export default {
             maxPrice: null,
             products: [],
             pagination: null,
+            errors:[]
         };
     },
     methods: {

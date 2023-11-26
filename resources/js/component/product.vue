@@ -12,7 +12,7 @@
                     <input type="number" v-model.number="maxPrice" placeholder="Max Price" class="form-control"/>
                 </div>
                 <div class="col-md-2">
-                    <button @click="search" class="btn btn-primary">Search</button>
+                    <button @click="search(1)" class="btn btn-primary">Search</button>
                 </div>
             </div>
         </div>
@@ -56,13 +56,12 @@ export default {
             maxPrice: null,
             products: [],
             pagination: [],
+            errors:[]
         };
     },
 
     methods: {
-        isWithinPriceRange(price) {
-            return price >= this.minPrice && price <= this.maxPrice;
-        },
+
         search(page = 1) {
             const params = {
                 name: this.searchQuery,
